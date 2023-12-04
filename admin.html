@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #complaintList {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #007bff; /* Blue color for the button */
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <div id="complaintList">
+        <h2>Complaints:</h2>
+        <ul>
+            <!-- Example complaint items (you would populate this dynamically from your data) -->
+            <li>
+                <strong>Name:</strong> User1<br>
+                <strong>Roll Number:</strong> 12345<br>
+                <strong>Complaint:</strong> This is the first complaint from User1.<br>
+                <button onclick="deleteComplaint(1)">Delete</button>
+            </li>
+            <li>
+                <strong>Name:</strong> User2<br>
+                <strong>Roll Number:</strong> 67890<br>
+                <strong>Complaint:</strong> This is the second complaint from User2.<br>
+                <button onclick="deleteComplaint(2)">Delete</button>
+            </li>
+            <!-- Add more complaint items as needed -->
+        </ul>
+    </div>
+
+    <script>
+        // Function to delete a complaint (you would implement the actual deletion logic)
+        function deleteComplaint(complaintId) {
+            // Implement deletion logic here, e.g., remove the complaint from the list or mark it as resolved.
+            // For this example, we'll simply remove the complaint item from the list.
+            var complaintItem = document.querySelector(`li[data-id="${complaintId}"]`);
+            if (complaintItem) {
+                complaintItem.remove();
+            }
+        }
+    </script>
+</body>
+</html>
